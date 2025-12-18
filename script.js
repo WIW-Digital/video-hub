@@ -1,4 +1,4 @@
-fetch('https://json.ngid.my.id/videos.json')
+fetch('videos.json')
   .then(res => res.json())
   .then(data => {
     // Sort by id descending
