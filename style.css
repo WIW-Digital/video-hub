@@ -164,3 +164,15 @@ body {
   font-size: 0.75rem;
   color: #e5e7eb;
 }
+
+.verified-icon {
+  color: #2563eb;
+  font-size: 0.85rem;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.video-author {
+  font-size: 0.85rem;
+  color: #64748b;
+}
