@@ -6,7 +6,6 @@
   <meta name="theme-color" content="#2563eb">
   <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
   <title>Video Hub</title>
-
   <link id="css" rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,18 +30,33 @@
   </footer>
 
   <script id="js" src="script.js"></script>
-  <script>
-    fetch("/version.json", { cache: "no-store" })
-      .then(res => res.json())
-      .then(data => {
-        const v = data.version;
 
-        document.getElementById("css").href = `/style.css?v=${v}`;
-        document.getElementById("js").src = `/script.js?v=${v}`;
-      })
-      .catch(() => {
-        console.warn("version check failed");
-      });
+  <script>
+    let currentVersion = null;
+
+    async function getVersion() {
+      const res = await fetch("/version.json", { cache: "no-store" });
+      const data = await res.json();
+      return data.version;
+    }
+
+    function applyVersion(v) {
+      document.getElementById("css").href = `/style.css?v=${v}`;
+      document.getElementById("js").src = `/script.js?v=${v}`;
+    }
+
+    getVersion().then(v => {
+      currentVersion = v;
+      applyVersion(v);
+    });
+
+    setInterval(async () => {
+      const latest = await getVersion();
+      if (latest !== currentVersion) {
+        location.reload();
+      }
+    }, 30000);
   </script>
+
 </body>
 </html>
