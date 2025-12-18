@@ -24,13 +24,19 @@ function renderVideos(videos) {
   noResult.style.display = "none";
 
   videos.forEach(video => {
+    const verifiedIcon = video.verified
+      ? `<i class="fa-solid fa-circle-check verified-icon" title="Verified"></i>`
+      : "";
+
     const div = document.createElement("div");
     div.className = "video-card";
     div.innerHTML = `
       <iframe src="${video.url}" title="${video.title}" allowfullscreen></iframe>
       <div class="video-info">
         <p class="video-title">${video.title}</p>
-        <p>Made by: ${video.madeby}</p>
+        <p class="video-author">
+          Made by: ${video.madeby} ${verifiedIcon}
+        </p>
       </div>
     `;
     videoList.appendChild(div);
