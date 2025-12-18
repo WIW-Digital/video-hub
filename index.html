@@ -52,18 +52,24 @@
     </small>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/canvas-snowfall@1.0.0/dist/snowfall.min.js"></script>
   <script id="js" src="script.js"></script>
-  <script src="https://app.embed.im/snow.js"
+
   <script>
     let currentVersion = null;
 
     async function getVersion() {
-      const res = await fetch("/version.json", { cache: "no-store" });
-      const data = await res.json();
-      return data.version;
+      try {
+        const res = await fetch("/version.json", { cache: "no-store" });
+        const data = await res.json();
+        return data.version;
+      } catch {
+        return null;
+      }
     }
 
     function applyVersion(v) {
+      if (!v) return;
       document.getElementById("css").href = `/style.css?v=${v}`;
       document.getElementById("js").src = `/script.js?v=${v}`;
     }
@@ -75,15 +81,28 @@
 
     setInterval(async () => {
       const latest = await getVersion();
-      if (latest !== currentVersion) location.reload();
+      if (latest && latest !== currentVersion) location.reload();
     }, 30000);
 
+    // JAGA JAGA KALO STUCK
+    function hideLoading() {
+      const l = document.getElementById("loadingScreen");
+      l.style.opacity = "0";
+      l.style.pointerEvents = "none";
+    }
+
     window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.getElementById("loadingScreen").style.opacity = "0";
-        document.getElementById("loadingScreen").style.pointerEvents = "none";
-      }, 600);
+      // start snow AFTER page load
+      snowfall.start({
+        maxFlakes: 80,
+        speed: 1
+      });
+
+      setTimeout(hideLoading, 500);
     });
+
+    // fallback kalau load event gagal
+    setTimeout(hideLoading, 3000);
   </script>
 
 </body>
