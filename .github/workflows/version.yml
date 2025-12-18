@@ -1,0 +1,20 @@
+name: Auto Update Version
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          echo "{ \"version\": \"$(date +%s)\" }" > version.json
+      - run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add version.json
+          git commit -m "auto: update version" || exit 0
+          git push
