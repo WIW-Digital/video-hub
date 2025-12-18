@@ -1,3 +1,3 @@
 {
-  "version": "2025-12-18-01"
+  "version": "init"
 }
