@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/(.*).html",
+      "source": "/",
       "headers": [
         {
           "key": "Cache-Control",
@@ -10,16 +10,16 @@
       ]
     },
     {
-      "source": "/(.*).css",
+      "source": "/(.*)\\.html",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
+          "value": "no-store, no-cache, must-revalidate"
         }
       ]
     },
     {
-      "source": "/(.*).js",
+      "source": "/(.*)\\.(css|js)",
       "headers": [
         {
           "key": "Cache-Control",
