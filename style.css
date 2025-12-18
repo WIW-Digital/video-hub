@@ -128,37 +128,39 @@ body {
 
 .search-section {
   background: linear-gradient(135deg, #2563eb, #1e40af);
-  padding: 18px 16px 28px;
+  padding: 10px 12px 14px;
   text-align: center;
 }
 
 .search-wrapper {
-  max-width: 420px;
-  margin: auto;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
   position: relative;
 }
 
 .search-wrapper i {
   position: absolute;
-  left: 14px;
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
+  font-size: 0.85rem;
   color: #94a3b8;
 }
 
 .search-wrapper input {
   width: 100%;
-  padding: 12px 14px 12px 42px;
+  padding: 8px 10px 8px 32px;
   border-radius: 999px;
   border: none;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   outline: none;
+  box-sizing: border-box;
 }
 
 .no-result {
   display: none;
-  margin-top: 14px;
-  font-size: 0.9rem;
+  margin-top: 8px;
+  font-size: 0.75rem;
   color: #e5e7eb;
 }
-
