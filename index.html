@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#2563eb">
   <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
   <title>Video Hub</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link id="css" rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -20,14 +21,28 @@
   </main>
 
   <footer class="footer">
-    <p>Want your video here?
-      <a href="mailto:your@email.com">Your Email</a> <!! Put you email on the mailto: >
+    <p>
+      Want your video here?
+      <a href="mailto:your@email.com">Your Email</a>
     </p>
     <small>
       Note: This is a YouTube parody. We do not use YouTube trademarks.
     </small>
   </footer>
 
-  <script src="script.js"></script>
+  <script id="js" src="script.js"></script>
+  <script>
+    fetch("/version.json", { cache: "no-store" })
+      .then(res => res.json())
+      .then(data => {
+        const v = data.version;
+
+        document.getElementById("css").href = `/style.css?v=${v}`;
+        document.getElementById("js").src = `/script.js?v=${v}`;
+      })
+      .catch(() => {
+        console.warn("version check failed");
+      });
+  </script>
 </body>
 </html>
