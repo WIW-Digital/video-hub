@@ -22,6 +22,22 @@
     <p>Simple video showcase platform</p>
   </header>
 
+  <section class="search-section">
+    <div class="search-wrapper">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search videos..."
+        autocomplete="off"
+      />
+    </div>
+
+    <p id="noResult" class="no-result">
+      The video you are looking for is not available.
+    </p>
+  </section>
+
   <main class="container">
     <div class="video-list" id="videoList"></div>
   </main>
@@ -37,7 +53,6 @@
   </footer>
 
   <script id="js" src="script.js"></script>
-
   <script>
     let currentVersion = null;
 
@@ -59,9 +74,7 @@
 
     setInterval(async () => {
       const latest = await getVersion();
-      if (latest !== currentVersion) {
-        location.reload();
-      }
+      if (latest !== currentVersion) location.reload();
     }, 30000);
 
     window.addEventListener("load", () => {
