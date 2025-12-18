@@ -6,9 +6,16 @@
   <meta name="theme-color" content="#2563eb">
   <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
   <title>Video Hub</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link id="css" rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <div id="loadingScreen" class="loading-screen">
+    <i class="fa-solid fa-spinner fa-spin"></i>
+    <p>Wait a minute</p>
+  </div>
 
   <header class="header">
     <h1>🎬 Video Hub</h1>
@@ -56,6 +63,13 @@
         location.reload();
       }
     }, 30000);
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loadingScreen").style.opacity = "0";
+        document.getElementById("loadingScreen").style.pointerEvents = "none";
+      }, 600);
+    });
   </script>
 
 </body>
