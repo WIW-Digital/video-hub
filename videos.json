@@ -11,13 +11,55 @@
     "title": "Eksperimen Menabrak Tiang Listrik dan Menghindari Sengatan",
     "url": "https://www.youtube.com/embed/4oaUOfmWatA",
     "madeby": "Mars Zingiber",
-    "verified": false
+    "verified": true
   },
   {
     "id": 3,
     "title": "Rencana Pelarian Yang Sempurna",
     "url": "https://www.youtube.com/embed/CDGp-rjEznE",
     "madeby": "Lensa Film",
+    "verified": false
+  },
+  {
+    "id": 4,
+    "title": "Kerja Sama di Crime Simulator 🤝 Live",
+    "url": "https://www.youtube.com/embed/IKjQy5vmunk",
+    "madeby": "Luthfi Halimawan",
+    "verified": true
+  },
+  {
+    "id": 5,
+    "title": "TERLALU MUDAH KITA GAS 2 STAGE !!! - Escape Simulator 2 Indonesia Part 3",
+    "url": "https://www.youtube.com/embed/aMZE9MlqGlI",
+    "madeby": "Afif Yulistian",
+    "verified": true
+  },
+  {
+    "id": 6,
+    "title": "Game Horor Legendaris Yang Bertajuk iblis3:Phenomena",
+    "url": "https://www.youtube.com/embed/bCzy00U1wgg",
+    "madeby": "Windah Basudara",
+    "verified": true
+  },
+  {
+    "id": 7,
+    "title": "telat | film pendek #neivtarsfest2019",
+    "url": "https://www.youtube.com/embed/tEndoh95muQ",
+    "madeby": "Andika Novandra",
+    "verified": false
+  },
+  {
+    "id": 8,
+    "title": "Yuk Jadi Tukang Nasi Goreng - Obsessed Night Shift Indonesia",
+    "url": "https://www.youtube.com/embed/uNgCzh-WAx8",
+    "madeby": "MiawAug",
+    "verified": true
+  },
+  {
+    "id": 9,
+    "title": "HARUSNYA AKU TIDAK NAIK KERETA INI.... Express No.6",
+    "url": "https://www.youtube.com/embed/iNJx-NZm-UY",
+    "madeby": "Windah Basudara",
     "verified": true
   }
 ]
