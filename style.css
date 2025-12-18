@@ -125,3 +125,40 @@ body {
   font-size: 1.05rem;
   opacity: 0.9;
 }
+
+.search-section {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  padding: 18px 16px 28px;
+  text-align: center;
+}
+
+.search-wrapper {
+  max-width: 420px;
+  margin: auto;
+  position: relative;
+}
+
+.search-wrapper i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.no-result {
+  display: none;
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
